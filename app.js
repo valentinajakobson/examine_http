@@ -1,10 +1,9 @@
 const express = require('express'); //node function
 const app = express();
-// let bodyParser = require('body-parser');
 
 app.use(express.static('public'));
-app.use(express.urlencoded());
-// app.use(bodyParser.json());
+app.use(express.urlencoded({ extended:true }));//bodyParser()
+// app.use(expess.json());
 
 app.get('/api/exercise', (req, res) => {
   res.send(req.query)
@@ -28,14 +27,18 @@ res.send(`<h1>Hello from Express!</h1>
 
 
 app.post('/api/login', (req, res) => {
-console.log(req.body.user)
-console.log(req.body.pwd)
+const user = req.body.user;
+const pwd = req.body.pwd;
+// const { user, pwd } = request.body;
 
-if (req.body.user == "" || req.body.pwd == ""){
+console.log(user);
+console.log(pwd);
+
+if (user == "" || pwd == ""){
   res.status(400).send('username or password is missing')
 } else if
-    (req.body.user == 'mark' && req.body.pwd == 'giraffe'){
-    res.status(200).json({user:req.body.user});
+    (user == 'mark' && pwd == 'giraffe'){
+    res.status(200).send({user}); 
   } else {
     res.status(403).end()
   }
