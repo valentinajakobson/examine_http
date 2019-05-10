@@ -8,8 +8,7 @@ app.use(express.urlencoded());
 
 app.get('/api/exercise', (req, res) => {
   res.send(req.query)
-  console.log(req.method)
-  console.log(req.path)
+  console.log(req.method, req.path)
   for (const key in req.query){
   console.log(`${key}: ${req.query[key]}`)
 }});
