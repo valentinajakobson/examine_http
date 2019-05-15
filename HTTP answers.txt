@@ -1,0 +1,23 @@
+﻿1. What is the meaning of the HTTP request types (HTTP verbs) GET, POST, PUT, and DELETE?
+GET is getting(fetching) data from a client.
+POST is for sending and creating data and store it on a server.
+PUT is for sending and updating data on a server.
+DELETE is removing data from a server.
+
+
+1. HTTP responses always include a status code. What are the possible response codes and what do they mean?
+1xx is an informational
+2xx is a success
+3xx is a redirection (to another page)
+4xx is a client side error
+5xx is a server side error
+
+
+1. How can parameters be sent in a GET request? How are they transferred in HTTP?
+Can be sent  by query string (all after ? in URL), example; "/api/exercise?name=Ky%C3%B6sti%20M%C3%A4ki-Mattila&occupation=singer&placeofbirth=Yl%C3%A4ne” or as a part of the URL path.
+Can be transferred by request.query.
+
+
+1. How can parameters be sent in a POST request? How are they transferred in HTTP?
+They are sent in the request body.
+Can be transferred by request.body or request.query
